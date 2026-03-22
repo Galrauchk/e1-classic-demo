@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Contact Plombier Lyon | Devis Gratuit — Dupont Plomberie"
+  description="Contactez Dupont Plomberie pour un devis gratuit ou une intervention urgente à Lyon. Formulaire en ligne, téléphone 04 72 00 00 00 ou email."
+>
+  <Header />
+  <main>
+
+    <div class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="/">Accueil</a>
+          <span aria-hidden="true">›</span>
+          <span>Contact</span>
+        </nav>
+        <h1>Contactez-nous — Devis Gratuit</h1>
+        <p>Remplissez le formulaire ou appelez-nous directement pour une intervention rapide</p>
+      </div>
+    </div>
+
+    <section class="section-white">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Formulaire -->
+          <div class="contact-form">
+            <h2>Demande de devis ou d'intervention</h2>
+            <p class="form-intro">Décrivez votre besoin, nous vous recontactons sous 24h. Pour une urgence, appelez directement le 04 72 00 00 00.</p>
+
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/contact?success=true"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p style="display:none;">
+                <label>Bot field : <input name="bot-field" /></label>
+              </p>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="prenom">Prénom *</label>
+                  <input type="text" id="prenom" name="prenom" placeholder="Jean" required autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label for="nom">Nom *</label>
+                  <input type="text" id="nom" name="nom" placeholder="Dupont" required autocomplete="family-name" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telephone">Téléphone *</label>
+                  <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" required autocomplete="tel" />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required autocomplete="email" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="type">Type de demande *</label>
+                <select id="type" name="type" required>
+                  <option value="" disabled selected>Sélectionnez votre besoin</option>
+                  <option value="urgence">Dépannage urgent</option>
+                  <option value="devis-installation">Devis installation sanitaire</option>
+                  <option value="detection">Détection de fuite</option>
+                  <option value="debouchage">Débouchage canalisation</option>
+                  <option value="chauffe-eau">Remplacement chauffe-eau</option>
+                  <option value="renovation">Rénovation salle de bain</option>
+                  <option value="autre">Autre demande</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="adresse">Adresse à Lyon</label>
+                <input type="text" id="adresse" name="adresse" placeholder="15 rue de la République, Lyon 1er" autocomplete="street-address" />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Description du problème *</label>
+                <textarea id="message" name="message" placeholder="Décrivez votre problème de plomberie, l'urgence de la situation et tout détail utile pour notre intervention..." required></textarea>
+              </div>
+
+              <button type="submit" class="form-submit">
+                Envoyer ma demande — Réponse sous 24h
+              </button>
+            </form>
+          </div>
+
+          <!-- Sidebar informations -->
+          <div class="contact-sidebar">
+            <div class="contact-info-box">
+              <h3>Nos coordonnées</h3>
+
+              <div class="info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.13 6.13l1.27-.76a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                <div>
+                  <a href="tel:0472000000">04 72 00 00 00</a>
+                  <br /><span style="font-size:0.8125rem;color:var(--text-secondary)">Urgence 24h/7j</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <a href="mailto:contact@dupont-plomberie.fr">contact@dupont-plomberie.fr</a>
+              </div>
+
+              <div class="info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Lyon 69000 — Tous arrondissements (1er au 9ème)</span>
+              </div>
+
+              <div class="info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <div>
+                  <span>Lundi – Dimanche</span><br />
+                  <span style="font-size:0.8125rem;color:var(--text-secondary)">24h/24 — 7j/7</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Délai d'intervention -->
+            <div class="contact-info-box">
+              <h3>Intervention rapide</h3>
+              <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:0.75rem;">
+                Pour toute urgence plomberie à Lyon, nous garantissons une intervention en moins de 2 heures.
+              </p>
+              <a href="tel:0472000000" class="btn btn-primary" style="width:100%;justify-content:center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.13 6.13l1.27-.76a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+                Appeler maintenant
+              </a>
+            </div>
+
+            <!-- Carte -->
+            <div class="map-wrapper" aria-label="Carte de Lyon">
+              <iframe
+                src="https://maps.google.com/maps?q=Lyon+69000+France&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="240"
+                style="border:0;display:block;"
+                allowfullscreen
+                loading="lazy"
+                title="Lyon — Zone d'intervention Dupont Plomberie"
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

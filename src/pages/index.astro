@@ -1,17 +1,129 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Temoignages from '../components/Temoignages.astro';
+import FAQ from '../components/FAQ.astro';
 
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Plumber",
+      "@id": "https://e1-classic-demo.netlify.app/#plumber",
+      "name": "Dupont Plomberie",
+      "url": "https://e1-classic-demo.netlify.app",
+      "telephone": "+33472000000",
+      "email": "contact@dupont-plomberie.fr",
+      "description": "Plombier professionnel à Lyon — Dépannage urgent 24h/7j dans les 9 arrondissements de Lyon.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lyon",
+        "addressLocality": "Lyon",
+        "postalCode": "69000",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.7640,
+        "longitude": 4.8357
+      },
+      "areaServed": [
+        "Lyon 1er", "Lyon 2ème", "Lyon 3ème", "Lyon 4ème", "Lyon 5ème",
+        "Lyon 6ème", "Lyon 7ème", "Lyon 8ème", "Lyon 9ème"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services de plomberie",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dépannage urgent plomberie" }, "price": "89", "priceCurrency": "EUR" },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Détection de fuite" }, "price": "120", "priceCurrency": "EUR" },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Débouchage canalisation" }, "price": "79", "priceCurrency": "EUR" },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Remplacement chauffe-eau" }, "price": "350", "priceCurrency": "EUR" }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "94",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quel est le délai d'intervention pour une urgence plomberie à Lyon ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nous garantissons une intervention en moins de 2 heures sur l'ensemble des arrondissements de Lyon (1er au 9ème). Notre équipe est disponible 24h/24 et 7j/7." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont vos tarifs pour un dépannage plomberie ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nos tarifs débutent à 89 € pour un dépannage standard. Le devis est communiqué par téléphone avant toute intervention, sans frais cachés." }
+        },
+        {
+          "@type": "Question",
+          "name": "Intervenez-vous le week-end et la nuit ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, notre service est actif 24h/24 et 7j/7, y compris les nuits, week-ends et jours fériés. Un supplément peut s'appliquer entre 22h et 7h." }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment détecter une fuite d'eau cachée ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Surveillez votre compteur toutes vannes fermées. S'il tourne, vous avez une fuite. Des taches d'humidité, carrelage gondolé ou odeurs de moisissure sont aussi des indices. Contactez-nous pour une détection précise." }
+        },
+        {
+          "@type": "Question",
+          "name": "Prenez-vous en charge les travaux pour le compte d'une assurance ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, nous fournissons un rapport d'intervention complet avec photos et devis pour votre dossier sinistre. Nous pouvons intervenir en urgence et facturer directement votre assurance." }
+        },
+        {
+          "@type": "Question",
+          "name": "Proposez-vous des devis gratuits ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, tous nos devis sont gratuits et sans engagement. Déplacement à domicile pour les travaux d'installation, diagnostic téléphonique pour les urgences." }
+        }
+      ]
+    }
+  ]
+});
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Plombier Lyon | Dupont Plomberie — Urgence 24h/7j"
+  description="Plombier à Lyon disponible 24h/7j. Dépannage urgent en 2h, installation sanitaire, détection de fuite. Devis gratuit. ☎ 04 72 00 00 00"
+  schema={schema}
+>
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <Temoignages />
+    <FAQ />
+
+    <!-- CTA Final -->
+    <section class="section-navy cta-section">
+      <div class="container">
+        <h2>Besoin d'un plombier à Lyon ?</h2>
+        <p class="cta-sub">Intervention rapide, devis gratuit, travail garanti. Appelez-nous maintenant ou demandez un devis en ligne.</p>
+        <div class="cta-buttons">
+          <a href="tel:0472000000" class="btn btn-white btn-lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.13 6.13l1.27-.76a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            04 72 00 00 00
+          </a>
+          <a href="/contact" class="btn btn-outline-white btn-lg">Demander un devis gratuit</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,238 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "provider": {
+    "@type": "Plumber",
+    "name": "Dupont Plomberie",
+    "telephone": "+33472000000",
+    "address": { "@type": "PostalAddress", "addressLocality": "Lyon", "postalCode": "69000", "addressCountry": "FR" }
+  },
+  "areaServed": "Lyon",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Prestations de plomberie Lyon"
+  }
+});
+---
+
+<Layout
+  title="Services Plomberie Lyon | Dupont Plomberie"
+  description="Tous nos services de plomberie à Lyon : dépannage urgent, installation sanitaire, détection de fuite, débouchage, chauffe-eau. Devis gratuit."
+  schema={schema}
+>
+  <Header />
+  <main>
+
+    <!-- En-tête de page -->
+    <div class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="/">Accueil</a>
+          <span aria-hidden="true">›</span>
+          <span>Nos services</span>
+        </nav>
+        <h1>Nos Services de Plomberie à Lyon</h1>
+        <p>Intervention professionnelle dans les 9 arrondissements — Devis gratuit sous 24h</p>
+      </div>
+    </div>
+
+    <!-- Services détaillés -->
+    <section class="section-white">
+      <div class="container">
+
+        <!-- 1 -->
+        <div class="service-detail" id="depannage">
+          <div class="service-detail-header">
+            <svg class="service-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+            </svg>
+            <div class="service-detail-title">
+              <h2>Dépannage urgent plomberie</h2>
+              <p class="service-detail-price">À partir de 89 € — Intervention garantie en 2h</p>
+            </div>
+          </div>
+          <p>Une urgence plomberie ne prévient pas. Fuite sous l'évier, robinet qui ne ferme plus, canalisation qui déborde — chaque minute compte pour limiter les dégâts des eaux. Notre équipe de plombiers d'urgence intervient sur tout Lyon en moins de 2 heures, 24h/24 et 7j/7.</p>
+          <p>Nous apportons tout le matériel nécessaire pour résoudre votre problème en une seule intervention. Le diagnostic est réalisé sur place et le devis vous est remis avant le début des travaux.</p>
+          <ul>
+            <li>Réparation de fuites sur robinets, joints, raccords et canalisations</li>
+            <li>Remplacement de robinetterie et de mitigeurs</li>
+            <li>Intervention sur chauffe-eau en panne</li>
+            <li>Réparation de chasses d'eau et mécanismes WC</li>
+            <li>Coupure d'eau d'urgence et mise en sécurité</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Demander une intervention urgente</a>
+        </div>
+
+        <!-- 2 -->
+        <div class="service-detail" id="installation">
+          <div class="service-detail-header">
+            <svg class="service-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M5 12a2 2 0 01-2-2V6h4v4a2 2 0 01-2 2zM5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7M19 12a2 2 0 002-2V6h-4v4a2 2 0 002 2z"/>
+            </svg>
+            <div class="service-detail-title">
+              <h2>Installation sanitaire</h2>
+              <p class="service-detail-price">Sur devis — Garantie décennale</p>
+            </div>
+          </div>
+          <p>Que vous rénoviez votre salle de bain ou que vous aménagez une nouvelle pièce, nos plombiers qualifiés installent tous vos équipements sanitaires dans le respect des normes DTU en vigueur. Chaque installation est garantie et certifiée.</p>
+          <ul>
+            <li>Pose de lavabo, vasque, colonne de douche et baignoire</li>
+            <li>Installation de WC suspendus et bâti-supports</li>
+            <li>Pose de cabines de douche et parois</li>
+            <li>Raccordement au réseau d'eau et d'évacuation</li>
+            <li>Installation de robinetterie haut de gamme</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Demander un devis installation</a>
+        </div>
+
+        <!-- 3 -->
+        <div class="service-detail" id="detection">
+          <div class="service-detail-header">
+            <svg class="service-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <path d="M11 8v3l2 2"/>
+            </svg>
+            <div class="service-detail-title">
+              <h2>Détection de fuite</h2>
+              <p class="service-detail-price">À partir de 120 € — Rapport d'expertise fourni</p>
+            </div>
+          </div>
+          <p>Une fuite non détectée peut provoquer des dégâts considérables et faire exploser votre facture d'eau. Grâce à nos équipements de pointe (caméra endoscopique, détection acoustique, thermographie infrarouge), nous localisons précisément toute fuite cachée, sous chape ou dans les murs.</p>
+          <ul>
+            <li>Détection acoustique non destructive</li>
+            <li>Inspection par caméra endoscopique</li>
+            <li>Thermographie infrarouge pour les fuites sous chape</li>
+            <li>Rapport d'expertise complet avec photos pour votre assurance</li>
+            <li>Réparation immédiate après localisation</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Détecter une fuite chez moi</a>
+        </div>
+
+        <!-- 4 -->
+        <div class="service-detail" id="debouchage">
+          <div class="service-detail-header">
+            <svg class="service-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22V12M12 12l-3-3M12 12l3-3M6 19a4 4 0 01-2-7.46V11a8 8 0 0116 0v.54A4 4 0 0118 19"/>
+            </svg>
+            <div class="service-detail-title">
+              <h2>Débouchage canalisation</h2>
+              <p class="service-detail-price">À partir de 79 € — Résultat garanti</p>
+            </div>
+          </div>
+          <p>Un WC bouché, un évier qui n'écoule plus ou une odeur nauséabonde remontant des canalisations — notre équipe intervient rapidement pour déboucher tous vos équipements par hydrocurage haute pression. Résultat garanti ou intervention gratuite.</p>
+          <ul>
+            <li>Débouchage WC, lavabo, évier et douche</li>
+            <li>Hydrocurage haute pression des canalisations principales</li>
+            <li>Passage de furet électrique</li>
+            <li>Inspection caméra après débouchage</li>
+            <li>Traitement préventif contre les bouchons récurrents</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Déboucher ma canalisation</a>
+        </div>
+
+        <!-- 5 -->
+        <div class="service-detail" id="chauffe-eau">
+          <div class="service-detail-header">
+            <svg class="service-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              <path d="M12 6v6l4 2"/><path d="M8.5 16.5l1-3M15.5 16.5l-1-3"/>
+            </svg>
+            <div class="service-detail-title">
+              <h2>Remplacement chauffe-eau</h2>
+              <p class="service-detail-price">À partir de 350 € fourni et posé</p>
+            </div>
+          </div>
+          <p>Chauffe-eau en panne, qui fuit ou trop énergivore ? Nous vous conseillons et installons le modèle le plus adapté à votre logement et à vos habitudes de consommation. Nous travaillons avec les meilleures marques du marché et gérons la reprise de l'ancien appareil.</p>
+          <ul>
+            <li>Chauffe-eau électrique à accumulation</li>
+            <li>Chauffe-eau thermodynamique (économies jusqu'à 70%)</li>
+            <li>Chauffe-eau instantané gaz et électrique</li>
+            <li>Chauffe-eau solaire individuel</li>
+            <li>Reprise de l'ancien matériel incluse</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Remplacer mon chauffe-eau</a>
+        </div>
+
+        <!-- 6 -->
+        <div class="service-detail" id="renovation">
+          <div class="service-detail-header">
+            <svg class="service-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+            <div class="service-detail-title">
+              <h2>Rénovation salle de bain</h2>
+              <p class="service-detail-price">Sur devis — Clé en main</p>
+            </div>
+          </div>
+          <p>Transformez votre salle de bain avec notre service de rénovation complète. De la conception à la finition, nous coordonnons tous les corps de métier nécessaires : plomberie, carrelage, électricité et peinture. Un interlocuteur unique pour un résultat parfait.</p>
+          <ul>
+            <li>Remplacement complet de la plomberie</li>
+            <li>Pose de carrelage mural et au sol</li>
+            <li>Installation de tous les équipements sanitaires</li>
+            <li>Mise aux normes électriques de la salle de bain</li>
+            <li>Coordination des artisans et suivi de chantier</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">Obtenir un devis rénovation</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Processus d'intervention -->
+    <section class="section-light">
+      <div class="container">
+        <div class="section-header">
+          <h2>Notre processus d'intervention</h2>
+          <p>4 étapes simples pour résoudre votre problème de plomberie</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-num">1</div>
+            <h3>Appel ou contact</h3>
+            <p>Décrivez votre problème par téléphone ou via notre formulaire en ligne. Diagnostic préliminaire gratuit.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">2</div>
+            <h3>Dispatch rapide</h3>
+            <p>Un plombier qualifié est envoyé vers votre adresse. Délai d'intervention garanti sous 2 heures à Lyon.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">3</div>
+            <h3>Diagnostic sur place</h3>
+            <p>Évaluation précise du problème et remise d'un devis clair avant tout travail. Pas de surprise sur la facture.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">4</div>
+            <h3>Intervention & garantie</h3>
+            <p>Travaux réalisés proprement avec les meilleurs matériaux. Nettoyage du chantier et garantie sur l'intervention.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-navy cta-section">
+      <div class="container">
+        <h2>Prêt à résoudre votre problème de plomberie ?</h2>
+        <p class="cta-sub">Contactez-nous maintenant pour une intervention rapide ou un devis gratuit sans engagement.</p>
+        <div class="cta-buttons">
+          <a href="tel:0472000000" class="btn btn-white btn-lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.13 6.13l1.27-.76a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            04 72 00 00 00
+          </a>
+          <a href="/contact" class="btn btn-outline-white btn-lg">Devis gratuit en ligne</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

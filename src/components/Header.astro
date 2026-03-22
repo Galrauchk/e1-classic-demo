@@ -1,0 +1,67 @@
+---
+const currentPath = Astro.url.pathname;
+
+function isActive(path: string): boolean {
+  if (path === '/') return currentPath === '/';
+  return currentPath.startsWith(path);
+}
+---
+
+<header class="header">
+  <div class="header-wrapper">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input" />
+    <div class="container">
+      <div class="header-row">
+        <!-- Logo -->
+        <a href="/" class="logo">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="10" cy="10" r="10" fill="#0a0f1e"/>
+            <path d="M10 4v6l4 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="10" r="2" fill="#fff"/>
+          </svg>
+          Dupont Plomberie
+        </a>
+
+        <!-- Navigation desktop -->
+        <nav class="nav-desktop" aria-label="Navigation principale">
+          <a href="/" class={isActive('/') ? 'active' : ''}>Accueil</a>
+          <a href="/services" class={isActive('/services') ? 'active' : ''}>Nos services</a>
+          <a href="/a-propos" class={isActive('/a-propos') ? 'active' : ''}>À propos</a>
+          <a href="/contact" class={isActive('/contact') ? 'active' : ''}>Contact</a>
+        </nav>
+
+        <!-- Actions desktop -->
+        <div class="header-actions">
+          <a href="tel:0472000000" class="btn-phone-header" aria-label="Appeler Dupont Plomberie">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.13 6.13l1.27-.76a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            04 72 00 00 00
+          </a>
+          <!-- Hamburger label -->
+          <label for="menu-toggle" class="hamburger" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" aria-label="Navigation mobile">
+      <div class="container">
+        <a href="/" class={isActive('/') ? 'active' : ''}>Accueil</a>
+        <a href="/services" class={isActive('/services') ? 'active' : ''}>Nos services</a>
+        <a href="/a-propos" class={isActive('/a-propos') ? 'active' : ''}>À propos</a>
+        <a href="/contact" class={isActive('/contact') ? 'active' : ''}>Contact</a>
+        <a href="tel:0472000000" class="btn-phone-mobile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.31 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.13 6.13l1.27-.76a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          04 72 00 00 00 — Urgence 24h/7j
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
