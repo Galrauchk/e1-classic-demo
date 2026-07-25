@@ -31,6 +31,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toStri
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
+    <meta name="robots" content="noindex,nofollow" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
