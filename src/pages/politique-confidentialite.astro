@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LegalPage from '../components/LegalPage.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const kind = 'privacy' as const;
+---
+
+<Layout title="Politique de confidentialité : [NOM DE L'ENTREPRISE]" description="Données personnelles, finalités, destinataires, conservation et droits RGPD.">
+  <Header />
+  <main>
+    <LegalPage kind={kind} />
+  </main>
+  <Footer />
+</Layout>
+
