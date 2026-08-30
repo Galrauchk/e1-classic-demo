@@ -5,5 +5,12 @@ import robotsTxt from 'astro-robots-txt';
 
 export default defineConfig({
   site: 'https://e1-classic-demo.netlify.app',
-  integrations: [sitemap(), robotsTxt()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !page.includes('/politique-confidentialite') &&
+        !page.includes('/politique-cookies'),
+    }),
+    robotsTxt(),
+  ],
 });
