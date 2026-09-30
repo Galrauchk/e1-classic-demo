@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 
-// Assistants IA nommés (standard WebTrafic, @galrauchk/site-tools) : mêmes règles que le groupe *.
+// Assistants IA nommés : mêmes règles que le groupe *.
 const ROBOTS_IA = [
   'GPTBot', 'ChatGPT-User', 'OAI-SearchBot',
   'ClaudeBot', 'Claude-User', 'Claude-SearchBot',
