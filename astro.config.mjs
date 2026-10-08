@@ -14,7 +14,7 @@ const ROBOTS_IA = [
 ];
 
 export default defineConfig({
-  site: 'https://e1-classic-demo.netlify.app',
+  site: 'https://demo-classic.webtrafic.fr',
   integrations: [
     sitemap({
       filter: (page) =>
