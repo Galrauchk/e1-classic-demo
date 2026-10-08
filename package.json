@@ -32,6 +32,6 @@
     "wrangler": "4.143.0"
   },
   "cloudflare": {
-    "domaine": "e1-classic-demo.netlify.app"
+    "domaine": "demo-classic.webtrafic.fr"
   }
 }
